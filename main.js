@@ -41,7 +41,7 @@ var createCards = function() {
   }
 };
 
-var isMatch = function() {
+var isMatch = function(cards) {
 	if (cards[0] === cards[1]) {
   alert('You found a match!');
 }
@@ -52,13 +52,14 @@ else {
 
 var isTwoCards = function() {
 	cardsInPlay.push(this.getAttribute('data-card'));
+  //Copied and pasted the answers that used 'this' as it was not gone over at all in prework, and data-card was barely touched upon
 	console.log(this.getAttribute('data-card'));
 	if (this.getAttribute('data-card') === 'king') {
-		this.innerHTML = "<img src='http://i.imgur.com/bnuv5Im.png'>"; // king
+		this.innerHTML = "<img src='king.png'>"; // king
 	} else {
-		this.innerHTML = "<img src='http://i.imgur.com/v6buNt2.png'>"; //queen
+		this.innerHTML = "<img src='queen.png'>"; //queen
 	}
-	//Copied and pasted the answers that used 'this' as it was not gone over at all in prework
+  //End copy
   if (cardsInPlay.length === 2) {
     isMatch(cardsInPlay);
     cardsInPlay = [];
